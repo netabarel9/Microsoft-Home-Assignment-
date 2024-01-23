@@ -1,3 +1,5 @@
+import threading
+
 import requests
 import time
 from flask import Flask, jsonify
@@ -40,6 +42,17 @@ def get_average_bitcoin():
     else:
         return jsonify({"average_bitcoin_value": "No data available"})
 
+@app.route('/healthz')
+def healthz():
+    return "OK"
+
+@app.route('/readyz')
+def readyz():
+    # Check if the application is ready
+    if len(values) >= 1:
+        return "OK"
+    else:
+        return "Not ready"
 
 def main():
     minute = 60  # in seconds
@@ -71,6 +84,9 @@ def main():
     finally:
         print("Done.")
 
-if __name__ == "__main__":
-    main()
+def run_flask():
     app.run(debug=True)
+
+if __name__ == "__main__":
+    run_flask()
+    main()
