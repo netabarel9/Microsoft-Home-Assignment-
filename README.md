@@ -8,4 +8,4 @@ In this project I created a resource group for the task.
  - DNS zone for connect between the load balencer and ingress(translate the address to the pods)
 
 
-#
+#AKS with R
