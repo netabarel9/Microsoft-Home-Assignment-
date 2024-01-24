@@ -48,7 +48,14 @@ I created images for the services and I add readinessProbe and livenessProbe.
  - Service b: contain simple html with "Welcome to Azure Container Service (AKS)" message.
 
 ## Ingress
-![alt text](dash.png)
+![alt text](ingressPhoto.png)
+
+
+I use in ingress and ingress Controller for manage efficiently  external access to services within my AKS cluster, enabling  path-based routing(xxx/service-A or xxx/service-B).
+
+* **Ingress Controller -** The Ingress Controller is a component responsible for handling external HTTP  traffic and forwarding it to the appropriate services within the AKS cluster. i  use in NGINX
+* **Ingress Resource:** An Ingress resource is a Kubernetes object that defines how external traffic should be processed and directed to different services within the cluster. It is the ingress.yml file. I added the paths should be directed to a particular services.
+* **Load Balancer:**  When an Ingress resource is created,  NGINX  provisions an Azure Load Balancer to distribute incoming external traffic among the pods of the specified services.
 
 
 
