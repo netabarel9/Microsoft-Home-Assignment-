@@ -32,6 +32,9 @@ Main features and concepts  I use of Kubernetes include:
 
 ## Deploynents
 
+I created images for the services and I add readinessProbe and livenessProbe.
+* The readinessProbe is a mechanism to determine when a container is ready to accept traffic or requests. It is used by Kubernetes to decide whether a pod should receive network traffic. If the readiness probe fails, the pod is marked as not ready, and it is excluded from the service's load balancer until it becomes ready again.
+* The livenessProbe is used to determine if a container is still running and healthy. If the liveness probe fails, Kubernetes restarts the container to attempt to recover it. Liveness probes are useful for detecting and recovering from situations where the application inside the container has entered a state where it cannot recover on its own.
 
 
 ## Services
@@ -43,6 +46,11 @@ Main features and concepts  I use of Kubernetes include:
   * /readyz
  
  - Service b: contain simple html with "Welcome to Azure Container Service (AKS)" message.
+
+## Ingress
+![alt text](dash.png)
+
+
 
    
   
