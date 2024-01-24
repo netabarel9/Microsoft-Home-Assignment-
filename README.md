@@ -57,6 +57,12 @@ I use in ingress and ingress Controller for manage efficiently  external access 
 * **Ingress Resource:** An Ingress resource is a Kubernetes object that defines how external traffic should be processed and directed to different services within the cluster. It is the ingress.yml file. I added the paths should be directed to a particular services.
 * **Load Balancer:**  When an Ingress resource is created,  NGINX  provisions an Azure Load Balancer to distribute incoming external traffic among the pods of the specified services.
 
+## Network Policy
+
+Allow you to define rules for controlling communication between pods based on labels, namespaces, and the type of traffic (ingress or egress). In this case, the policy is used to control egress traffic from "service-a-bitcoin" pods to "service-b" pods.
+I use engress configured to deny egress traffic from pods labeled "app: service-a-bitcoin" to pods labeled "app: service-b."
+
+
 
 
    
